@@ -31,4 +31,17 @@ class Application
 
         $handler->handle();
     }
+
+    /**
+     *
+     *
+     */
+    public function run()
+    {
+        $data = $this->registry->get();
+
+        if(!empty($data->{$_POST['chat_id']})) {
+            $client->sendMessage($_POST['chat_id'], $_POST['text']);
+        }
+    }
 }
