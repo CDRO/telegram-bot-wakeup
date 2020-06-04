@@ -1,7 +1,7 @@
 {
   "name": "cdro/telegram-bot-wakeup",
   "description": "Simple Telegram Bot that wakes you up",
-  "type": "library",
+  "type": "telegram-bot",
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
   "authors": [
