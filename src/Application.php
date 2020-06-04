@@ -18,7 +18,7 @@ class Application
         (new SecurityLayer)->check($securityLayerCallback);
 
         $this->client = $client;
-        $this->registry = new BasicRegistry($client, dirname(__DIR__) . '/static.json';
+        $this->registry = (new BasicRegistry($client, dirname(__DIR__) . '/static.json'))->load();
     }
 
     /**
@@ -27,14 +27,11 @@ class Application
      */
     public function runWebhook()
     {
-        $handler = new WebhookRegistry($this->registry);
-
-        $handler->handle();
+        (new WebhookRegistry($this->registry))->handle();
     }
 
     /**
-     *
-     *
+     * Run the 2FA distribution
      */
     public function run()
     {
