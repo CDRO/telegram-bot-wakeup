@@ -3,6 +3,7 @@
   "description": "Simple Telegram Bot that wakes you up",
   "type": "library",
   "license": "GPL-2.0-or-later",
+  "minimum-stability": "dev",
   "authors": [
     {
       "name": "Tizian Schmidlin",
