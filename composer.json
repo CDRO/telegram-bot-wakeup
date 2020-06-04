@@ -21,7 +21,7 @@
     }
   },
   "extra": {
-    "installer-name": "sso",
+    "installer-name": "wakeup",
     "branch-alias":  {
       "dev-master": "1.0.x-dev"
     }
