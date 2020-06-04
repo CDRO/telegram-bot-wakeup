@@ -6,6 +6,7 @@ use \Cdro\TelegramBotCore\Client\Client;
 use \Cdro\TelegramBotCore\Registry\BasicRegistry;
 use \Cdro\TelegramBotCore\Helper\WebhookRegistry;
 use \Cdro\TelegramBotCore\Security\SimpleLayer as SecurityLayer;
+use Cdro\TelegramBotWakeup\Responder\WakeupResponder;
 
 class Application
 {
@@ -18,7 +19,7 @@ class Application
         (new SecurityLayer)->check($securityLayerCallback);
 
         $this->client = $client;
-        $this->registry = (new BasicRegistry($client, dirname(dirname(dirname(__DIR__))) . '/wakeup_static.json'))->load();
+        $this->registry = (new BasicRegistry(new WakeupResponder($client), dirname(dirname(dirname(__DIR__))) . '/wakeup_static.json'))->load();
     }
 
     /**
